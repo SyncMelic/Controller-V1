@@ -61,10 +61,15 @@ void setup() {
   peerInfo.channel = 0;
   peerInfo.encrypt = false;
   esp_now_add_peer(&peerInfo);
- 
- 
-  /* Delay 100 ms */
-  delay(100);
+
+ /* Vibration Test */
+  ledcWrite(PWM_channel_0, 1024);
+  delay(1000);
+  ledcWrite(PWM_channel_0, 0);
+  delay(1000);
+  ledcWrite(PWM_channel_1, 1024);
+  delay(1000);
+  ledcWrite(PWM_channel_1, 0);
 }
  
 /**********************
